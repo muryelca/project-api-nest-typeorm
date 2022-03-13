@@ -6,14 +6,19 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('teste')
-  getHello(): string {
-    return this.appService.getHello();
+  @Get('')
+  getInit(): string {
+    return this.appService.getInit();
   }
 
-  @Get('usuario')
+  @Get('user')
   getUser(): string {
     return this.appService.getUser();
+  }
+
+  @Get('users')
+  getUsers(): string {
+    return this.appService.getUsers();
   }
 
   @Get('login')
