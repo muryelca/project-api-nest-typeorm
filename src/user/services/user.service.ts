@@ -21,7 +21,11 @@ export class UserService {
   }
 
   findAnyPost(id: number): Observable<UserPost> {
-    return from(this.userPostRepository.find({ where: { id: id } }));
+    return AnyPost();
+
+    function AnyPost(): Observable<UserPost> {
+      return from(this.userPostRepository.find(id));
+    }
   }
 
   updatePost(id: number, userPost: UserPost): Observable<UpdateResult> {
