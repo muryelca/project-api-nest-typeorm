@@ -11,11 +11,11 @@ export class AppController {
     return this.appService.getInit();
   }
 
-  @Get('user')
+  /* @Get('user')
   getUser(): string {
     return this.appService.getUser();
   }
-
+*/
   @Get('users')
   getUsers(): string {
     return this.appService.getUsers();
