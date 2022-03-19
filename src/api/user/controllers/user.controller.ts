@@ -33,7 +33,7 @@ export class UserController {
     @Query('take') take = 1,
     @Query('skip') skip = 1,
   ): Observable<UserPost[]> {
-    take = take > 20 ? 20 : take;
+    take = take > 15 ? 15 : take;
     return this.userService.findPosts(take, skip);
   }
 
