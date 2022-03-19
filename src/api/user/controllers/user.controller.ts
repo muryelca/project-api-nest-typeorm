@@ -23,10 +23,10 @@ export class UserController {
     return this.userService.createPost(userPost);
   }
 
-  // @Get()
-  // findAll(): Observable<UserPost[]> {
-  //   return this.userService.findAllPosts();
-  // }
+  @Get()
+  findAll(): Observable<UserPost[]> {
+    return this.userService.findAllPosts();
+  }
 
   @Get()
   findSelected(

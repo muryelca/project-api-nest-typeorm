@@ -17,7 +17,7 @@ export class UserPostEntity {
   @CreateDateColumn({ nullable: true, name: 'create_date' })
   createdAt: Date;
 
-  @UpdateDateColumn({ nullable: true, name: 'update_date' })
+  @Column({ nullable: true, name: 'update_date' })
   updatedAt: Date;
 
   @Column()
