@@ -1,9 +1,9 @@
 export interface ProductPost {
   id?: number;
+  body?: string;
   createdAt?: Date;
   updatedAt?: Date;
   name?: string;
-  body?: string;
   price?: string;
   quantity?: string;
 }
