@@ -7,13 +7,10 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity('user_post', { schema: 'postgres' })
-export class UserPostEntity {
+@Entity('product_post', { schema: 'postgres' })
+export class ProductPostEntity {
   @PrimaryGeneratedColumn()
   public id: number;
-
-  @Column({ default: '' })
-  body: string;
 
   @CreateDateColumn({ nullable: true, name: 'create_date' })
   createdAt: Date;
@@ -24,18 +21,12 @@ export class UserPostEntity {
   @Column()
   name: string;
 
-  @Column()
-  lastname: string;
-
-  @Column({ type: 'timestamp' })
-  born: Date;
+  @Column({ default: '' })
+  body: string;
 
   @Column()
-  email: string;
+  price: string;
 
   @Column()
-  password: string;
-
-  @Column()
-  location: string;
+  quantity: string;
 }

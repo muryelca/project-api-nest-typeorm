@@ -11,25 +11,25 @@ export class AppController {
     return this.appService.getInit();
   }
 
-  /* @Get('user')
-  getUser(): string {
-    return this.appService.getUser();
-  }
-*/
-  @Get('users')
-  getUsers(): string {
-    return this.appService.getUsers();
-  }
+  // @Get('user')
+  // getUser(): string {
+  //   return this.appService.getUser();
+  // }
+
+  // @Get('users')
+  // getUsers(): string {
+  //   return this.appService.getUsers();
+  // }
 
   @Get('login')
   getLogin(): string {
     return this.appService.getLogin();
   }
 
-  @Get('produto')
-  getProduct(): string {
-    return this.appService.getProduct();
-  }
+  // @Get('produto')
+  // getProduct(): string {
+  //   return this.appService.getProduct();
+  // }
 
   @Get('compra')
   getSell(): string {
