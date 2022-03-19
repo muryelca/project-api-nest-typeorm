@@ -20,12 +20,12 @@ export class UserService {
     return from(this.userPostRepository.find());
   }
 
-  findAnyPost(id: number): Observable<UserPost> {
-    return AnyPost();
-
-    function AnyPost(): Observable<UserPost> {
-      return from(this.userPostRepository.find(id));
-    }
+  findPosts(take = 10, skip = 0): Observable<UserPost[]> {
+    return from(
+      this.userPostRepository.findAndCount({ take, skip }).then(([posts]) => {
+        return <UserPost[]>posts;
+      }),
+    );
   }
 
   updatePost(id: number, userPost: UserPost): Observable<UpdateResult> {

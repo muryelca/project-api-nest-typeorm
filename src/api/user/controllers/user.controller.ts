@@ -6,6 +6,7 @@ import {
   Param,
   Post,
   Put,
+  Query,
 } from '@nestjs/common';
 import { Observable } from 'rxjs';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -22,14 +23,18 @@ export class UserController {
     return this.userService.createPost(userPost);
   }
 
-  @Get()
-  findAll(): Observable<UserPost[]> {
-    return this.userService.findAllPosts();
-  }
+  // @Get()
+  // findAll(): Observable<UserPost[]> {
+  //   return this.userService.findAllPosts();
+  // }
 
-  @Get(':id')
-  findAny(@Param('id') id: number): Observable<UserPost> {
-    return this.userService.findAnyPost(id);
+  @Get()
+  findSelected(
+    @Query('take') take = 1,
+    @Query('skip') skip = 1,
+  ): Observable<UserPost[]> {
+    take = take > 20 ? 20 : take;
+    return this.userService.findPosts(take, skip);
   }
 
   @Put(':id')

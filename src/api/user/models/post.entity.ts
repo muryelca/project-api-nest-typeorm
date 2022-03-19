@@ -3,6 +3,7 @@ import {
   CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 
 @Entity('user_post', { schema: 'postgres' })
@@ -16,7 +17,7 @@ export class UserPostEntity {
   @CreateDateColumn({ nullable: true, name: 'create_date' })
   createdAt: Date;
 
-  @Column({ nullable: true, name: 'update_date' })
+  @UpdateDateColumn({ nullable: true, name: 'update_date' })
   updatedAt: Date;
 
   @Column()
