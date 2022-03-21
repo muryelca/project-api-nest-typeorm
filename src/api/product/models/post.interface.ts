@@ -1,3 +1,5 @@
+import { User } from 'src/api/auth/models/user.interface';
+
 export interface ProductPost {
   id?: number;
   body?: string;
@@ -6,4 +8,5 @@ export interface ProductPost {
   name?: string;
   price?: string;
   quantity?: string;
+  author?: User;
 }

@@ -1,7 +1,9 @@
+import { UserEntity } from 'src/api/auth/models/user.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToOne,
   PrimaryGeneratedColumn,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   UpdateDateColumn,
@@ -29,4 +31,10 @@ export class ProductPostEntity {
 
   @Column()
   quantity: string;
+
+  @ManyToOne(
+    () => ProductPostEntity,
+    (productPostEntity) => productPostEntity.author,
+  )
+  author: UserEntity;
 }

@@ -30,7 +30,7 @@ export class UserPostEntity {
   @Column({ type: 'timestamp' })
   born: Date;
 
-  @Column()
+  @Column({ unique: true })
   email: string;
 
   @Column()
