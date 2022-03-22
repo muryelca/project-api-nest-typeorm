@@ -3,7 +3,7 @@ import { Role } from './role.entity';
 
 export interface User {
   id?: number;
-  firtName?: string;
+  firstName?: string;
   lastName?: string;
   email?: string;
   password?: string;
