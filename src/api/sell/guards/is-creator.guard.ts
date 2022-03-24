@@ -1,7 +1,8 @@
 import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
-import { Observable } from 'rxjs';
+import { map, Observable, switchMap } from 'rxjs';
 import { User } from 'src/api/auth/models/user.interface';
 import { AuthService } from 'src/api/auth/services/auth.service';
+import { SellPost } from 'src/api/sell/models/post.interface';
 import { SellService } from 'src/api/sell/services/sell.service';
 
 @Injectable()
@@ -22,6 +23,15 @@ export class IsCreatorGuard implements CanActivate {
     const userId = user.id;
     const sellId = params.id;
 
-    return this.authService.findUserbyId(userId).pipe
+    return this.authService.findUserbyId(userId).pipe(
+      switchMap((user: User) =>
+        this.sellService.findSellById(sellId).pipe(
+          map((sellPost: SellPost) => {
+            const isAuthor = user.id === sellPost.author.id;
+            return isAuthor;
+          }),
+        ),
+      ),
+    );
   }
 }

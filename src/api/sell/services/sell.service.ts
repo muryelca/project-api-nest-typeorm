@@ -38,6 +38,8 @@ export class SellService {
   }
 
   findSellById(id: number): Observable<SellPost> {
-    return from(this.sellPostRepository.findOne({ id }));
+    return from(
+      this.sellPostRepository.findOne({ id }, { relations: ['author'] }),
+    );
   }
 }

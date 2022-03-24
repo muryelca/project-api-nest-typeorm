@@ -13,8 +13,9 @@ import {
 } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { JwtGuard } from 'src/api/auth/guards/jwt.guard';
-import { IsCreatorGuard } from 'src/api/product/guards/is-creator.guard';
+
 import { DeleteResult, UpdateResult } from 'typeorm';
+import { IsCreatorGuard } from '../guards/is-creator.guard';
 import { SellPost } from '../models/post.interface';
 import { SellService } from '../services/sell.service';
 
