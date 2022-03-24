@@ -15,7 +15,6 @@ import { Observable } from 'rxjs';
 import { JwtGuard } from 'src/api/auth/guards/jwt.guard';
 
 import { DeleteResult, UpdateResult } from 'typeorm';
-import { IsCreatorGuard } from '../guards/is-creator.guard';
 import { SellPost } from '../models/post.interface';
 import { SellService } from '../services/sell.service';
 
@@ -23,13 +22,13 @@ import { SellService } from '../services/sell.service';
 export class SellController {
   constructor(private sellService: SellService) {}
 
-  @UseGuards(JwtGuard, IsCreatorGuard)
+  @UseGuards(JwtGuard)
   @Post()
   create(@Body() sellPost: SellPost, @Request() req): Observable<SellPost> {
     return this.sellService.createPost(req.user, sellPost);
   }
 
-  @UseGuards(JwtGuard, IsCreatorGuard)
+  @UseGuards(JwtGuard)
   @Get()
   findAll(): Observable<SellPost[]> {
     return this.sellService.findAllPosts();
@@ -43,14 +42,14 @@ export class SellController {
     return this.sellService.findPosts(take, skip);
   }
 
-  @UseGuards(JwtGuard, IsCreatorGuard)
+  @UseGuards(JwtGuard)
   @Get(':sellId')
   findSellById(@Param('sellId') sellStringId: string): Observable<SellPost> {
     const sellId = parseInt(sellStringId);
     return this.sellService.findSellById(sellId);
   }
 
-  @UseGuards(JwtGuard, IsCreatorGuard)
+  @UseGuards(JwtGuard)
   @Put(':id')
   update(
     @Param('id') id: number,
@@ -59,7 +58,7 @@ export class SellController {
     return this.sellService.updatePost(id, sellPost);
   }
 
-  @UseGuards(JwtGuard, IsCreatorGuard)
+  @UseGuards(JwtGuard)
   @Delete(':id')
   delete(@Param('id') id: number): Observable<DeleteResult> {
     return this.sellService.deletePost(id);
