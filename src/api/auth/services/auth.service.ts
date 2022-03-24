@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as bcrypt from 'bcrypt';
@@ -50,16 +50,22 @@ export class AuthService {
         },
       ),
     ).pipe(
-      switchMap((user: User) =>
-        from(bcrypt.compare(password, user.password)).pipe(
+      switchMap((user: User) => {
+        if (!user) {
+          throw new HttpException(
+            { status: HttpStatus.FORBIDDEN, error: 'Credenciais invalidas' },
+            HttpStatus.FORBIDDEN,
+          );
+        }
+        return from(bcrypt.compare(password, user.password)).pipe(
           map((isValidPassword: boolean) => {
             if (isValidPassword) {
               delete user.password;
               return user;
             }
           }),
-        ),
-      ),
+        );
+      }),
     );
   }
 
