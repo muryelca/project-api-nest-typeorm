@@ -14,9 +14,6 @@ export class ProductPostEntity {
   @PrimaryGeneratedColumn()
   public id: number;
 
-  @Column({ default: '' })
-  body: string;
-
   @CreateDateColumn({ nullable: true, name: 'create_date' })
   createdAt: Date;
 
@@ -25,6 +22,9 @@ export class ProductPostEntity {
 
   @Column()
   name: string;
+
+  @Column({ default: '' })
+  body: string;
 
   @Column()
   price: string;

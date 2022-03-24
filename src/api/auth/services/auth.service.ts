@@ -68,7 +68,6 @@ export class AuthService {
     return this.validateUser(email, password).pipe(
       switchMap((user: User) => {
         if (user) {
-          // create JWT - credentials
           return from(this.jwtService.signAsync({ user }));
         }
       }),

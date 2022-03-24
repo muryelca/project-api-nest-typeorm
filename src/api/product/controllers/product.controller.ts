@@ -8,8 +8,11 @@ import {
   Post,
   Put,
   Query,
+  Request,
+  UseGuards,
 } from '@nestjs/common';
 import { Observable } from 'rxjs';
+import { JwtGuard } from 'src/api/auth/guards/jwt.guard';
 import { DeleteResult, UpdateResult } from 'typeorm';
 import { ProductPost } from '../models/post.interface';
 import { ProductService } from '../services/product.service';
@@ -18,9 +21,13 @@ import { ProductService } from '../services/product.service';
 export class ProductController {
   constructor(private productService: ProductService) {}
 
+  @UseGuards(JwtGuard)
   @Post()
-  create(@Body() productPost: ProductPost): Observable<ProductPost> {
-    return this.productService.createPost(productPost);
+  create(
+    @Body() productPost: ProductPost,
+    @Request() req,
+  ): Observable<ProductPost> {
+    return this.productService.createPost(req.user, productPost);
   }
 
   @Get()

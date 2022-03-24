@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { from, Observable } from 'rxjs';
+import { User } from 'src/api/auth/models/user.interface';
 import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 import { ProductPostEntity } from '../models/post.entity';
 import { ProductPost } from '../models/post.interface';
@@ -12,7 +13,8 @@ export class ProductService {
     private readonly productPostRepository: Repository<ProductPostEntity>,
   ) {}
 
-  createPost(productPost: ProductPost): Observable<ProductPost> {
+  createPost(user: User, productPost: ProductPost): Observable<ProductPost> {
+    productPost.author = user;
     return from(this.productPostRepository.save(productPost));
   }
 
