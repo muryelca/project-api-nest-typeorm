@@ -32,9 +32,6 @@ export class ProductPostEntity {
   @Column()
   quantity: string;
 
-  @ManyToOne(
-    () => ProductPostEntity,
-    (productPostEntity) => productPostEntity.author,
-  )
+  @ManyToOne(() => UserEntity, (userEntity) => userEntity.productPost)
   author: UserEntity;
 }
