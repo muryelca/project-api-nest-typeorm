@@ -9,4 +9,5 @@ export interface SellPost {
   price?: string;
   quantity?: string;
   author?: User;
+  isSell?: boolean;
 }

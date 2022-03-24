@@ -34,4 +34,7 @@ export class SellPostEntity {
 
   @ManyToOne(() => UserEntity, (userEntity) => userEntity.sellPost)
   author: UserEntity;
+
+  @Column()
+  isSell: boolean;
 }
