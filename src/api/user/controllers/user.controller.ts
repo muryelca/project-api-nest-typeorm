@@ -37,6 +37,12 @@ export class UserController {
     return this.userService.findPosts(take, skip);
   }
 
+  @Get(':userId')
+  findUserById(@Param('userId') userStringId: string): Observable<UserPost> {
+    const userId = parseInt(userStringId);
+    return this.userService.findUserById(userId);
+  }
+
   @Put(':id')
   update(
     @Param('id') id: number,

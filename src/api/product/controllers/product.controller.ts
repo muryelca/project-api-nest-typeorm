@@ -30,6 +30,7 @@ export class ProductController {
     return this.productService.createPost(req.user, productPost);
   }
 
+  @UseGuards(JwtGuard)
   @Get()
   findAll(): Observable<ProductPost[]> {
     return this.productService.findAllPosts();
@@ -43,6 +44,16 @@ export class ProductController {
     return this.productService.findPosts(take, skip);
   }
 
+  @UseGuards(JwtGuard)
+  @Get(':productId')
+  findUserById(
+    @Param('productId') productStringId: string,
+  ): Observable<ProductPost> {
+    const productId = parseInt(productStringId);
+    return this.productService.findProductById(productId);
+  }
+
+  @UseGuards(JwtGuard)
   @Put(':id')
   update(
     @Param('id') id: number,
@@ -51,6 +62,7 @@ export class ProductController {
     return this.productService.updatePost(id, productPost);
   }
 
+  @UseGuards(JwtGuard)
   @Delete(':id')
   delete(@Param('id') id: number): Observable<DeleteResult> {
     return this.productService.deletePost(id);

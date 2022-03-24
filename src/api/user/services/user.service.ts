@@ -35,4 +35,8 @@ export class UserService {
   deletePost(id: number): Observable<DeleteResult> {
     return from(this.userPostRepository.delete(id));
   }
+
+  findUserById(id: number): Observable<UserPost> {
+    return from(this.userPostRepository.findOne({ id }));
+  }
 }

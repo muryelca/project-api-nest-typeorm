@@ -38,4 +38,8 @@ export class ProductService {
   deletePost(id: number): Observable<DeleteResult> {
     return from(this.productPostRepository.delete(id));
   }
+
+  findProductById(id: number): Observable<ProductPost> {
+    return from(this.productPostRepository.findOne({ id }));
+  }
 }
