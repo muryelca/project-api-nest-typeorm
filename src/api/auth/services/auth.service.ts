@@ -79,4 +79,15 @@ export class AuthService {
       }),
     );
   }
+
+  findUserbyId(id: number): Observable<User> {
+    return from(
+      this.userRepository.findOne({ id }, { relations: ['sellPosts'] }),
+    ).pipe(
+      map((user: User) => {
+        delete user.password;
+        return user;
+      }),
+    );
+  }
 }

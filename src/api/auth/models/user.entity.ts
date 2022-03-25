@@ -27,4 +27,5 @@ export class UserEntity {
     (productPostEntity) => productPostEntity.author,
   )
   productPost: ProductPostEntity[];
+  sellPost: any;
 }

@@ -46,7 +46,7 @@ export class ProductController {
 
   @UseGuards(JwtGuard)
   @Get(':productId')
-  findUserById(
+  findProductById(
     @Param('productId') productStringId: string,
   ): Observable<ProductPost> {
     const productId = parseInt(productStringId);
