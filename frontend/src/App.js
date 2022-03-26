@@ -1,4 +1,4 @@
-import logoIMG from './assets/logo.svg'
+import logoBanner from './assets/logo.webp'
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
           <form className="login-form">
             <span className="login-form-title">Bem Vindo!</span>
             <span className="login-form-title">
-              <img src={logoIMG} alt="BeSafe" />
+              <img src={logoBanner} alt="BeSafe" />
             </span>
             
           </form>
