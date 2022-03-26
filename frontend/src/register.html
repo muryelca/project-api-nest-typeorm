@@ -9,6 +9,26 @@
   
           <div className="wrap-input">              
             <input
+             className={firstName !== "" ? 'has-val input' : 'input'}
+             type="firstName" 
+             value={firstName}
+             onChange={e => setfirstName(e.target.value)}
+             />
+            <span className="focus-input" data-placeholder="Primeiro Nome"></span>
+          </div>
+
+          <div className="wrap-input">              
+            <input
+             className={lastName !== "" ? 'has-val input' : 'input'}
+             type="lastName" 
+             value={lastName}
+             onChange={e => setlastName(e.target.value)}
+             />
+            <span className="focus-input" data-placeholder="Sobrenome"></span>
+          </div>
+
+          <div className="wrap-input">              
+            <input
              className={email !== "" ? 'has-val input' : 'input'}
              type="email" 
              value={email}
@@ -26,9 +46,19 @@
             />
             <span className="focus-input" data-placeholder="Senha"></span>
           </div>
+
+          <div className="wrap-input">              
+            <input
+             className={role !== "" ? 'has-val input' : 'input'}
+             type="role" 
+             value={role}
+             onChange={e => setRole(e.target.value)}
+             />
+            <span className="focus-input" data-placeholder="Papel"></span>
+          </div>
   
           <div className="container-register-form-btn">
-            <button className="register-form-btn">register</button>
+            <button className="register-form-btn">Criar Conta!</button>
           </div>
           
         </form>
