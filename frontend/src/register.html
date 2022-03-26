@@ -1,0 +1,37 @@
+<div className="register">
+    <div className="container-register">
+      <div className="wrap-register">
+        <form className="register-form">
+          <span className="register-form-title">Bem Vindo, crie sua conta aqui!</span>
+          <span className="register-form-title">
+            <img src={logoBanner} alt="BeSafe" />
+          </span>
+  
+          <div className="wrap-input">              
+            <input
+             className={email !== "" ? 'has-val input' : 'input'}
+             type="email" 
+             value={email}
+             onChange={e => setEmail(e.target.value)}
+             />
+            <span className="focus-input" data-placeholder="E-mail"></span>
+          </div>
+  
+          <div className="wrap-input">
+            <input 
+            className={password !== "" ? 'has-val input' : 'input'} 
+            type="password" 
+            value={password}
+             onChange={e => setPassword(e.target.value)}
+            />
+            <span className="focus-input" data-placeholder="Senha"></span>
+          </div>
+  
+          <div className="container-register-form-btn">
+            <button className="register-form-btn">register</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
