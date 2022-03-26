@@ -3,7 +3,7 @@ import { useState } from 'react';
 import logoBanner from './assets/logo.webp'
 import './login.css'
 
-const Page = () => {  
+const Login = () => {  
    const[email, setEmail] = useState("")
    const[password, setPassword] = useState("")
 
@@ -54,4 +54,4 @@ const Page = () => {
   );
 }
 
-export default Page;
+export default Login;
