@@ -1,4 +1,4 @@
-import { ProductPostEntity } from 'api/src/api/product/models/post.entity';
+import { ProductPostEntity } from 'api/product/models/post.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { Role } from './role.entity';
 

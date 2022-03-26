@@ -12,10 +12,10 @@ const config_1 = require("@nestjs/config");
 const typeorm_1 = require("@nestjs/typeorm");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
-const user_module_1 = require("./api/user/user.module");
-const product_module_1 = require("./api/product/product.module");
 const auth_module_1 = require("./auth/auth.module");
-const sell_module_1 = require("./api/sell/sell.module");
+const product_module_1 = require("./product/product.module");
+const sell_module_1 = require("./sell/sell.module");
+const user_module_1 = require("./user/user.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([

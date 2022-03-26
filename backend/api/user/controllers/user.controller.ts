@@ -9,8 +9,9 @@ import {
   Query,
   UseGuards,
 } from '@nestjs/common';
+import { JwtGuard } from 'api/auth/guards/jwt.guard';
 import { Observable } from 'rxjs';
-import { JwtGuard } from 'api/src/auth/guards/jwt.guard';
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { DeleteResult, UpdateDateColumn, UpdateResult } from 'typeorm';
 import { UserPost } from '../models/post.interface';

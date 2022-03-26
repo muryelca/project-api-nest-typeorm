@@ -1,1 +1,1 @@
-{"version":3,"file":"user.interface.js","sourceRoot":"","sources":["../../../api/src/auth/models/user.interface.ts"],"names":[],"mappings":""}
+{"version":3,"file":"user.interface.js","sourceRoot":"","sources":["../../../api/auth/models/user.interface.ts"],"names":[],"mappings":""}

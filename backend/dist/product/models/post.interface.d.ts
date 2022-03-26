@@ -1,4 +1,4 @@
-import { User } from 'api/src/auth/models/user.interface';
+import { User } from 'api/auth/models/user.interface';
 export interface ProductPost {
     id?: number;
     body?: string;

@@ -14,8 +14,8 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SellController = void 0;
 const common_1 = require("@nestjs/common");
-const rxjs_1 = require("rxjs");
 const jwt_guard_1 = require("../../auth/guards/jwt.guard");
+const rxjs_1 = require("rxjs");
 const sell_service_1 = require("../services/sell.service");
 let SellController = class SellController {
     constructor(sellService) {

@@ -3,10 +3,12 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserModule } from './api/user/user.module';
-import { ProductModule } from './api/product/product.module';
 import { AuthModule } from './auth/auth.module';
-import { SellModule } from './api/sell/sell.module';
+import { ProductModule } from './product/product.module';
+import { SellModule } from './sell/sell.module';
+import { UserModule } from './user/user.module';
+
+
 
 @Module({
   imports: [

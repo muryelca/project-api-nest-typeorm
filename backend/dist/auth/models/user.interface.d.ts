@@ -1,4 +1,4 @@
-import { ProductPost } from 'api/src/api/product/models/post.interface';
+import { ProductPost } from 'api/product/models/post.interface';
 import { Role } from './role.entity';
 export interface User {
     id?: number;

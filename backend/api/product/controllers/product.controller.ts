@@ -12,7 +12,7 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { Observable } from 'rxjs';
-import { JwtGuard } from 'api/src/auth/guards/jwt.guard';
+import { JwtGuard } from 'api/auth/guards/jwt.guard';
 import { DeleteResult, UpdateResult } from 'typeorm';
 import { ProductPost } from '../models/post.interface';
 import { ProductService } from '../services/product.service';

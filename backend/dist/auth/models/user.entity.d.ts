@@ -1,4 +1,4 @@
-import { ProductPostEntity } from 'api/src/api/product/models/post.entity';
+import { ProductPostEntity } from 'api/product/models/post.entity';
 import { Role } from './role.entity';
 export declare class UserEntity {
     id: number;

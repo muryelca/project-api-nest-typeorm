@@ -1,4 +1,4 @@
-import { UserEntity } from 'api/src/auth/models/user.entity';
+import { UserEntity } from 'api/auth/models/user.entity';
 export declare class SellPostEntity {
     id: number;
     createdAt: Date;

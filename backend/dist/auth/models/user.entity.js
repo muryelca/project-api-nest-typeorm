@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserEntity = void 0;
-const post_entity_1 = require("api/src/api/product/models/post.entity");
+const post_entity_1 = require("../../product/models/post.entity");
 const typeorm_1 = require("typeorm");
 const role_entity_1 = require("./role.entity");
 let UserEntity = class UserEntity {
