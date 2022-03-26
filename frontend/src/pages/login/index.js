@@ -1,7 +1,14 @@
-const[email, setEmail] = useState("")
-const[password, setPassword] = useState("")
+import React from 'react';
+import { useState } from 'react';
+import logoBanner from './assets/logo.webp'
+import './login.css'
 
-<div className="login">
+const Page = () => {  
+   const[email, setEmail] = useState("")
+   const[password, setPassword] = useState("")
+
+   return (
+    <div className="container">
     <div className="container-login">
       <div className="wrap-login">
         <form className="login-form">
@@ -42,5 +49,9 @@ const[password, setPassword] = useState("")
           
         </form>
       </div>
+      </div>
     </div>
-  </div>
+  );
+}
+
+export default Page;

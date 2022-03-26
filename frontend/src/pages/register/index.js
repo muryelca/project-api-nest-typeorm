@@ -1,9 +1,16 @@
-const[email, setEmail] = useState("")
-const[password, setPassword] = useState("")
-const[firstName, setFirstName] = useState("")
-const[lastName, setLastName] = useState("")
+import React from 'react';
+import { useState } from 'react';
+import logoBanner from './assets/logo.webp'
+import './login.css'
 
-<div className="register">
+const Page = () => {
+  const[email, setEmail] = useState("")
+  const[password, setPassword] = useState("")
+  const[firstName, setFirstName] = useState("")
+  const[lastName, setLastName] = useState("")
+
+  return (
+  <div className="container">
     <div className="container-register">
       <div className="wrap-register">
         <form className="register-form">
@@ -60,3 +67,5 @@ const[lastName, setLastName] = useState("")
       </div>
     </div>
   </div>
+  );
+}
