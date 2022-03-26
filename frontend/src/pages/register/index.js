@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import logoBanner from './assets/logo.webp'
-import './login.css'
+import './register.css'
 
 const Register = () => {
   const[email, setEmail] = useState("")
