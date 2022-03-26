@@ -11,8 +11,9 @@ import {
   Request,
   UseGuards,
 } from '@nestjs/common';
+import { JwtGuard } from 'api/auth/guards/jwt.guard';
 import { Observable } from 'rxjs';
-import { JwtGuard } from 'api/src/auth/guards/jwt.guard';
+
 
 import { DeleteResult, UpdateResult } from 'typeorm';
 import { SellPost } from '../models/post.interface';
