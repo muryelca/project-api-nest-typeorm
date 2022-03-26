@@ -1,3 +1,8 @@
+const[email, setEmail] = useState("")
+const[password, setPassword] = useState("")
+const[firstName, setFirstName] = useState("")
+const[lastName, setLastName] = useState("")
+
 <div className="register">
     <div className="container-register">
       <div className="wrap-register">
@@ -12,7 +17,7 @@
              className={firstName !== "" ? 'has-val input' : 'input'}
              type="firstName" 
              value={firstName}
-             onChange={e => setfirstName(e.target.value)}
+             onChange={e => setFirstName(e.target.value)}
              />
             <span className="focus-input" data-placeholder="Primeiro Nome"></span>
           </div>
@@ -22,7 +27,7 @@
              className={lastName !== "" ? 'has-val input' : 'input'}
              type="lastName" 
              value={lastName}
-             onChange={e => setlastName(e.target.value)}
+             onChange={e => setLastName(e.target.value)}
              />
             <span className="focus-input" data-placeholder="Sobrenome"></span>
           </div>
@@ -45,16 +50,6 @@
              onChange={e => setPassword(e.target.value)}
             />
             <span className="focus-input" data-placeholder="Senha"></span>
-          </div>
-
-          <div className="wrap-input">              
-            <input
-             className={role !== "" ? 'has-val input' : 'input'}
-             type="role" 
-             value={role}
-             onChange={e => setRole(e.target.value)}
-             />
-            <span className="focus-input" data-placeholder="Papel"></span>
           </div>
   
           <div className="container-register-form-btn">
