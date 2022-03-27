@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import Login from './components/pages/login/';
 import Register from './components/pages/register';
+
 import CreateProduct from './components/pages/product/create-product'
 import EditProduct from './components/pages/product/edit-product';
 import ViewProduct from './components/pages/product/view-product';
@@ -19,22 +20,22 @@ import Container from './components/layouts/Container'
 const App = () => {
   return (
     <Router>
-      <Navbar />
-        <Routes>
-          <Container customClass="min-height"> 
+     <Navbar />
+      <Container>
 
+        <Routes>
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/create-product' element={<CreateProduct />} />
             <Route path='/edit-product' element={<EditProduct />} />
             <Route path='/view-product' element={<ViewProduct />} />
-           <Route path='/create-sell' element={<CreateSell />} />
-           <Route path='/view-sell' element={<ViewSell />} />
-           <Route path='/edit-sell' element={<EditSell />} />
-
-           </Container>
+            <Route path='/create-sell' element={<CreateSell />} />
+            <Route path='/view-sell' element={<ViewSell />} />
+            <Route path='/edit-sell' element={<EditSell />} />           
         </Routes>
-      <Footer />
+
+      </Container>
+     <Footer />
     </Router>
   );
 }
