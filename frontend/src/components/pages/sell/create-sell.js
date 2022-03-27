@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import './sell.css'
+import './../../style/sell.css'
 import sell from './../../../assets/sell.png'
 
 const CreateSell = () => {

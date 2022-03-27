@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import './product.css'
+import './../../style/product.css'
 import box from './../../../assets/box.png'
 import PaginationComponent from './../../layouts/paginationComponents';
 import PaginationSelector from './../../layouts/paginationSelector';

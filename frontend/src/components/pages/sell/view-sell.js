@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import './sell.css'
+import './../../style/sell.css'
 import sell from './../../../assets/sell.png'
 import PaginationComponent from './../../layouts/paginationComponents';
 import PaginationSelector from './../../layouts/paginationSelector';

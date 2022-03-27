@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import logoBanner from './../../../assets/logo.webp'
-import './register.css'
+import './../../style/register.css'
 import { Link } from 'react-router-dom'
 import userService from './../../../services/UserService';
 

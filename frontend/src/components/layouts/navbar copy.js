@@ -11,19 +11,19 @@ return (
       <Container>
 
         <ul className="list">
-          <li className="items">
+          <li className="item">
            <Link to="./view-product">Produtos</Link>
           </li>
 
-          <li className="items">
+          <li className="item">
            <Link to="./view-sell">Vendas</Link>
           </li>
 
-          <li className="items">
+          <li className="item">
            <Link to="./login">Login</Link>
           </li>
 
-          <li className="items">
+          <li className="item">
            <Link to="./register">Registrar</Link>
           </li>
 

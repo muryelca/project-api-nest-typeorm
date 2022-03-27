@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import './product.css'
+import './../../style/product.css'
 import box from './../../../assets/box.png'
 
 const EditProduct = () => {
