@@ -1,5 +1,5 @@
 import React from "react";
-import './../pages/product/product.css'
+import './../style/product.css'
 
 const PaginationComponent = ({pages, currentPage, setCurrentPage}) => {
 

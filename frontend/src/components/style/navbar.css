@@ -4,6 +4,7 @@
     background-color: #1b61a6;
     padding: 1em;
     text-align: center;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
 .list {
@@ -22,5 +23,5 @@
 }
 
 .items a:hover {
-    color: aqua;
+    color: blueviolet;
 }
