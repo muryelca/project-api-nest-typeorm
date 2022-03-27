@@ -1,10 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import logoBanner from './../../assets/logo.webp'
-import './register.css'
-import { Link } from 'react-router-dom'
+import './product.css'
 
-const Register = () => {
+const createProduct = () => {
   const[email, setEmail] = useState("")
   const[password, setPassword] = useState("")
   const[firstName, setFirstName] = useState("")
@@ -12,13 +11,10 @@ const Register = () => {
 
   return (
   <div className="container">
-    <div className="container-register">
-      <div className="wrap-register">
-        <form className="register-form">
-          <span className="register-form-title">Bem Vindo, crie sua conta aqui!</span>
-          <span className="register-form-title">
-            <img src={logoBanner} alt="BeSafe" />
-          </span>
+    <div className="container-product">
+      <div className="wrap-product">
+        <form className="product-form">
+          <span className="product-form-title">Crie seu produto.</span>
   
           <div className="wrap-input">              
             <input
@@ -60,15 +56,14 @@ const Register = () => {
             <span className="focus-input" data-placeholder="Senha"></span>
           </div>
   
-          <div className="container-register-form-btn">
-            <button className="register-form-btn">Criar Conta!</button>
+          <div className="container-product-form-btn">
+            <button className="product-form-btn">Criar Conta!</button>
           </div>
 
           <div className="text-center">
             <span className="txt1">Já possui conta? </span>
 
-            {/* <a className="txt2" href="./../login"> Faça seu Login</a> */}
-            <Link to="./../login"> Faça seu Login</Link>
+            <a className="txt2" href="./../login"> Faça seu Login</a>
           </div>
           
         </form>
@@ -78,4 +73,4 @@ const Register = () => {
   );
 }
 
-export default Register;
+export default createProduct;

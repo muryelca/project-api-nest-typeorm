@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
-import logoBanner from './assets/logo.webp'
+import logoBanner from './../../assets/logo.webp'
 import './login.css'
+import { Link } from 'react-router-dom'
 
 const Login = () => {  
    const[email, setEmail] = useState("")
@@ -44,7 +45,9 @@ const Login = () => {
           <div className="text-center">
             <span className="txt1">Não possui conta? </span>
 
-            <a className="txt2" href="/frontend/src/pages/register/index.js"> Criar conta.</a>
+           {/* </div><a className="txt2" <Link to="./../register">> </Link> Criar conta.</a> */}
+            <Link to="./../register"> Criar conta.</Link>
+
           </div>
           
         </form>
