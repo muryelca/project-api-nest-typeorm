@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import './product.css'
-import box from './../../assets/box.png'
-import PaginationComponent from '../../components/paginationComponents';
-import PaginationSelector from '../../components/paginationSelector';
+import box from './../../../assets/box.png'
+import PaginationComponent from './../../layouts/paginationComponents';
+import PaginationSelector from './../../layouts/paginationSelector';
 
 
 const ViewProduct = () => {

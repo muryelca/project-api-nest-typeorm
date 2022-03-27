@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
-import logoBanner from './../../assets/logo.webp'
+import logoBanner from './../../../assets/logo.webp'
 import './register.css'
 import { Link } from 'react-router-dom'
-import userService from '../../services/UserService';
+import userService from './../../../services/UserService';
 
 const Register = () => {
   const[email, setEmail] = useState("")

@@ -23,12 +23,12 @@
 }
 
 .wrap-sell {
-    width: 390px;
+    width: 630px;
     background-color: #1b61a6;
-    border-radius: 10px;
+    border-radius: 15px;
 
     overflow: hidden;
-    padding: 77px 55px 33px 55px;
+    padding: 77px 35px 33px 55px;
     box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
 }
 

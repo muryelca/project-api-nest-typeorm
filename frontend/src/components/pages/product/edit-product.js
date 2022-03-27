@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import './product.css'
-import box from './../../assets/box.png'
+import box from './../../../assets/box.png'
 
 const EditProduct = () => {
   const[quantity, setQuantity] = useState("")

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import logoBanner from './../../assets/logo.webp'
+import logoBanner from './../../../assets/logo.webp'
 import './login.css'
 import { Link } from 'react-router-dom'
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
-import './product.css'
-import box from './../../assets/box.png'
+import './sell.css'
+import box from './../../../assets/box.png'
 
-const CreateProduct = () => {
+const EditSell = () => {
   const[quantity, setQuantity] = useState("")
   const[body, setBody] = useState("")
   const[name, setName] = useState("")
@@ -11,22 +11,22 @@ const CreateProduct = () => {
 
   return (
   <div className="container">
-    <div className="container-product">
-      <div className="wrap-product">
-        <form className="product-form">
-          <span className="product-form-title">Crie seu produto.</span>
+    <div className="container-sell">
+      <div className="wrap-sell">
+        <form className="sell-form">
+          <span className="sell-form-title">Edite seu produto.</span>
           <span className="login-form-title">
             <img src={box} alt="Produto" />
           </span>
   
-          <div className="wrap-input"> {/* Nome do produto */}             
+          <div className="wrap-input"> {/* Edite sua venda */}             
             <input
              className={name !== "" ? 'has-val input' : 'input'}
              type="name" 
              value={name}
              onChange={e => setName(e.target.value)}
              />
-            <span className="focus-input" data-placeholder="Nome do produto"></span>
+            <span className="focus-input" data-placeholder="Edite sua venda"></span>
           </div>
 
           <div className="wrap-input"> {/* Preco do produto */}             
@@ -59,8 +59,8 @@ const CreateProduct = () => {
             <span className="focus-input" data-placeholder="Descrição do produto"></span>
           </div>
   
-          <div className="container-product-form-btn"> {/* botao criar produto */}
-            <button className="product-form-btn">Criar produto!</button>
+          <div className="container-sell-form-btn"> {/* botao editar produto */}
+            <button className="sell-form-btn">Edite a venda!</button>
           </div>
           
         </form>
@@ -70,4 +70,4 @@ const CreateProduct = () => {
   );
 }
 
-export default CreateProduct;
+export default EditSell;
