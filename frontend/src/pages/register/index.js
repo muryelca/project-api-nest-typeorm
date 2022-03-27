@@ -3,12 +3,24 @@ import { useState } from 'react';
 import logoBanner from './../../assets/logo.webp'
 import './register.css'
 import { Link } from 'react-router-dom'
+import userService from '../../services/UserService';
 
 const Register = () => {
   const[email, setEmail] = useState("")
   const[password, setPassword] = useState("")
   const[firstName, setFirstName] = useState("")
   const[lastName, setLastName] = useState("")
+
+  const salvar = () => {     
+      let user = {
+        email: email,
+        password: password,
+        firstName: firstName,
+        lastName: lastName,
+
+      }      
+      userService.create(user)
+    }
 
   return (
   <div className="container">
@@ -61,7 +73,7 @@ const Register = () => {
           </div>
   
           <div className="container-register-form-btn">
-            <button className="register-form-btn">Criar Conta!</button>
+            <button className="register-form-btn" onClick={() => salvar()}>Criar Conta!</button>
           </div>
 
           <div className="text-center">
