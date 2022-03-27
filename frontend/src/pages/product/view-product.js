@@ -1,69 +1,58 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './product.css'
 import box from './../../assets/box.png'
+import PaginationComponent from '../../components/paginationComponents';
+import PaginationSelector from '../../components/paginationSelector';
+
 
 const ViewProduct = () => {
-  const[quantity, setQuantity] = useState("")
-  const[body, setBody] = useState("")
-  const[name, setName] = useState("")
-  const[price, setPrice] = useState("")
+  const[products, setProduct] = useState([])
+  const[productPerPage, setProductPerPage] = useState(10)
+  const[currentPage, setCurrentPage] = useState(0)
+
+  const pages = Math.ceil(products.length / productPerPage)
+  const startIndex = currentPage * productPerPage;
+  const endIndex = startIndex + productPerPage;
+  const currentProduct = products.slice(startIndex, endIndex)
+
+  useEffect(() => { 
+    const fetchData = async () => {
+    const result = await fetch('https://jsonplaceholder.typicode.com/todos')
+    .then(response => response.json())
+    .then(data => data)
+
+    setProduct(result)
+  }
+  fetchData()
+  }, [])
+
+  useEffect(() => {
+    setCurrentPage(0)
+  }, [productPerPage])
 
   return (
-  <div className="container">
-    <div className="container-product">
+    <div className='container'>
+      <div className="container-product">
       <div className="wrap-product">
-        <form className="product-form">
-          <span className="product-form-title">Edite seu produto.</span>
+        <div className="product-form">
+          <span className="product-form-title">Todos os produtos.</span>
           <span className="login-form-title">
             <img src={box} alt="Produto" />
-          </span>
-  
-          <div className="wrap-input"> {/* Nome do produto */}             
-            <input
-             className={name !== "" ? 'has-val input' : 'input'}
-             type="name" 
-             value={name}
-             onChange={e => setName(e.target.value)}
-             />
-            <span className="focus-input" data-placeholder="Nome do produto"></span>
-          </div>
+          </span>      
 
-          <div className="wrap-input"> {/* Preco do produto */}             
-            <input
-             className={price !== "" ? 'has-val input' : 'input'}
-             type="price" 
-             value={price}
-             onChange={e => setPrice(e.target.value)}
-             />
-            <span className="focus-input" data-placeholder="Digite o preço"></span>
-          </div>
+      {currentProduct.map(item => {
+        return <div className='item'>
+          <span>{item.id}</span>
+          <span>{item.title}</span>
+          <span>{item.completed}</span>
+           </div>
+      })}
 
-          <div className="wrap-input"> {/* Quantidade do produto */}             
-            <input
-             className={quantity !== "" ? 'has-val input' : 'input'}
-             type="quantity" 
-             value={quantity}
-             onChange={e => setQuantity(e.target.value)}
-             />
-            <span className="focus-input" data-placeholder="Quantidade do produto"></span>
-          </div>
-  
-          <div className="wrap-input"> {/* Descrição do produto */}
-            <input 
-            className={body !== "" ? 'has-val input' : 'input'} 
-            type="body" 
-            value={body}
-             onChange={e => setBody(e.target.value)}
-            />
-            <span className="focus-input" data-placeholder="Descrição do produto"></span>
-          </div>
-  
-          <div className="container-product-form-btn"> {/* botao editar produto */}
-            <button className="product-form-btn">Delete o produto!</button>
-          </div>
-          
-        </form>
+    <PaginationSelector productPerPage={productPerPage} setProductPerPage={setProductPerPage}/>
+    <PaginationComponent pages={pages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+
+        </div>
       </div>
     </div>
   </div>
